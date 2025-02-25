@@ -26,28 +26,7 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
                 .padding(.vertical)
             
-            VStack {
-                if let age = viewModel.age {
-                    
-                    HStack {
-                        Text("\(text) is")
-                            .font(.system(size: 24, weight: .light, design: .rounded))
-
-                        Text(age.age, format: .number)
-                            .font(.system(size: 28, weight: .bold, design: .rounded))
-                            .italic()
-                        
-                        Text("years old")
-                            .font(.system(size: 24, weight: .light, design: .rounded))
-                    }
-                }
-                
-                if let nationality = viewModel.nationality {
-                    Text(nationality)
-                        .font(.system(size: 18, weight: .light, design: .rounded))
-                }
-            }
-            .frame(height: 60)
+            AgeResultView(age: viewModel.age, name: text, nationality: viewModel.nationality)
             
             Image("image")
                 .resizable()
@@ -57,43 +36,12 @@ struct ContentView: View {
 
             Spacer()
             
-            HStack(spacing: 8) {
-                
-                HStack {
-                    Menu {
-                        ForEach(viewModel.countries) { country in
-                            Button {
-                                selectedCountry = country
-                            } label: {
-                                Text("\(country.flag) \(country.name)")
-                            }
-
-                        }
-                    } label: {
-                        Text(selectedCountry.flag)
-                    }
-
-                    TextField("Your name...", text: $text)
-                        .autocorrectionDisabled()
-                }
-                .padding()
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.black)
-                }
-             
-                Button {
-                    viewModel.getAgeAndNationality(from: text, countryCode: selectedCountry.code)
-                } label: {
-                    Image(systemName: "magnifyingglass")
-                        .font(.system(size: 22))
-                        .padding()
-                        .foregroundStyle(.white)
-                        .background(text.isEmpty ? Color.black.opacity(0.3) : Color.black)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                }
-                .disabled(text.isEmpty)
+            SearchField(
+                text: $text,
+                selectedCountry: $selectedCountry,
+                countries: viewModel.countries
+            ) {
+                viewModel.getAgeAndNationality(from: text, countryCode: selectedCountry.code)
             }
             .padding(.bottom, 20)
             

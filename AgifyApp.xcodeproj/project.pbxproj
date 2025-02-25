@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4862E0802D6E035500E1F690 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4862E07F2D6E035500E1F690 /* SearchField.swift */; };
+		4862E0822D6E046C00E1F690 /* AgeResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4862E0812D6E046C00E1F690 /* AgeResultView.swift */; };
 		48C239992D6DC987004B6C9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C239932D6DC987004B6C9C /* Preview Assets.xcassets */; };
 		48C2399A2D6DC987004B6C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C239962D6DC987004B6C9C /* Assets.xcassets */; };
 		48C2399B2D6DC987004B6C9C /* AgifyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239952D6DC987004B6C9C /* AgifyAppApp.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4862E07F2D6E035500E1F690 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		4862E0812D6E046C00E1F690 /* AgeResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeResultView.swift; sourceTree = "<group>"; };
 		48C239662D6DC97C004B6C9C /* AgifyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgifyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C239762D6DC97D004B6C9C /* AgifyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgifyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C239802D6DC97D004B6C9C /* AgifyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgifyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				48C239972D6DC987004B6C9C /* ContentView.swift */,
+				4862E07F2D6E035500E1F690 /* SearchField.swift */,
+				4862E0812D6E046C00E1F690 /* AgeResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,12 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4862E0822D6E046C00E1F690 /* AgeResultView.swift in Sources */,
 				48C2399B2D6DC987004B6C9C /* AgifyAppApp.swift in Sources */,
 				48C239B02D6DD1E8004B6C9C /* ApiService.swift in Sources */,
 				48C239AD2D6DD1A7004B6C9C /* ApiError.swift in Sources */,
 				48C239B32D6DD659004B6C9C /* Age.swift in Sources */,
 				48C2399C2D6DC987004B6C9C /* ContentView.swift in Sources */,
 				48C239A62D6DD0DF004B6C9C /* Networkable.swift in Sources */,
+				4862E0802D6E035500E1F690 /* SearchField.swift in Sources */,
 				48C239C12D6DF40B004B6C9C /* Nationality.swift in Sources */,
 				48C239BA2D6DDA62004B6C9C /* DataSource.swift in Sources */,
 				48C239B72D6DD671004B6C9C /* ViewModel.swift in Sources */,
