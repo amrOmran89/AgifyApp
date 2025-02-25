@@ -6,6 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		48C239992D6DC987004B6C9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C239932D6DC987004B6C9C /* Preview Assets.xcassets */; };
+		48C2399A2D6DC987004B6C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C239962D6DC987004B6C9C /* Assets.xcassets */; };
+		48C2399B2D6DC987004B6C9C /* AgifyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239952D6DC987004B6C9C /* AgifyAppApp.swift */; };
+		48C2399C2D6DC987004B6C9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239972D6DC987004B6C9C /* ContentView.swift */; };
+		48C2399F2D6DC98A004B6C9C /* AgifyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C2399D2D6DC98A004B6C9C /* AgifyAppTests.swift */; };
+		48C239A32D6DC98D004B6C9C /* AgifyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239A02D6DC98D004B6C9C /* AgifyAppUITests.swift */; };
+		48C239A42D6DC98D004B6C9C /* AgifyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239A12D6DC98D004B6C9C /* AgifyAppUITestsLaunchTests.swift */; };
+		48C239A62D6DD0DF004B6C9C /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239A52D6DD0DF004B6C9C /* Networkable.swift */; };
+		48C239A72D6DD0DF004B6C9C /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239A52D6DD0DF004B6C9C /* Networkable.swift */; };
+		48C239AD2D6DD1A7004B6C9C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239AC2D6DD1A7004B6C9C /* ApiError.swift */; };
+		48C239B02D6DD1E8004B6C9C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239AF2D6DD1E8004B6C9C /* ApiService.swift */; };
+		48C239B12D6DD1E8004B6C9C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239AF2D6DD1E8004B6C9C /* ApiService.swift */; };
+		48C239B32D6DD659004B6C9C /* Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239B22D6DD659004B6C9C /* Age.swift */; };
+		48C239B72D6DD671004B6C9C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239B62D6DD671004B6C9C /* ViewModel.swift */; };
+		48C239BA2D6DDA62004B6C9C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239B92D6DDA62004B6C9C /* DataSource.swift */; };
+		48C239BB2D6DE899004B6C9C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239B62D6DD671004B6C9C /* ViewModel.swift */; };
+		48C239BC2D6DE8A1004B6C9C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239AC2D6DD1A7004B6C9C /* ApiError.swift */; };
+		48C239BD2D6DE8E6004B6C9C /* Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239B22D6DD659004B6C9C /* Age.swift */; };
+		48C239BE2D6DE8F2004B6C9C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239B92D6DDA62004B6C9C /* DataSource.swift */; };
+		48C239C02D6DF40B004B6C9C /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239BF2D6DF40B004B6C9C /* Nationality.swift */; };
+		48C239C12D6DF40B004B6C9C /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C239BF2D6DF40B004B6C9C /* Nationality.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		48C239772D6DC97D004B6C9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,25 +51,21 @@
 		48C239662D6DC97C004B6C9C /* AgifyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgifyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C239762D6DC97D004B6C9C /* AgifyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgifyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C239802D6DC97D004B6C9C /* AgifyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgifyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C239932D6DC987004B6C9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		48C239952D6DC987004B6C9C /* AgifyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgifyAppApp.swift; sourceTree = "<group>"; };
+		48C239962D6DC987004B6C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48C239972D6DC987004B6C9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		48C2399D2D6DC98A004B6C9C /* AgifyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgifyAppTests.swift; sourceTree = "<group>"; };
+		48C239A02D6DC98D004B6C9C /* AgifyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgifyAppUITests.swift; sourceTree = "<group>"; };
+		48C239A12D6DC98D004B6C9C /* AgifyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgifyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48C239A52D6DD0DF004B6C9C /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
+		48C239AC2D6DD1A7004B6C9C /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		48C239AF2D6DD1E8004B6C9C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		48C239B22D6DD659004B6C9C /* Age.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Age.swift; sourceTree = "<group>"; };
+		48C239B62D6DD671004B6C9C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		48C239B92D6DDA62004B6C9C /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		48C239BF2D6DF40B004B6C9C /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		48C239682D6DC97C004B6C9C /* AgifyApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AgifyApp;
-			sourceTree = "<group>";
-		};
-		48C239792D6DC97D004B6C9C /* AgifyAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AgifyAppTests;
-			sourceTree = "<group>";
-		};
-		48C239832D6DC97D004B6C9C /* AgifyAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AgifyAppUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		48C239632D6DC97C004B6C9C /* Frameworks */ = {
@@ -75,9 +95,9 @@
 		48C2395D2D6DC97C004B6C9C = {
 			isa = PBXGroup;
 			children = (
-				48C239682D6DC97C004B6C9C /* AgifyApp */,
-				48C239792D6DC97D004B6C9C /* AgifyAppTests */,
-				48C239832D6DC97D004B6C9C /* AgifyAppUITests */,
+				48C239982D6DC987004B6C9C /* AgifyApp */,
+				48C2399E2D6DC98A004B6C9C /* AgifyAppTests */,
+				48C239A22D6DC98D004B6C9C /* AgifyAppUITests */,
 				48C239672D6DC97C004B6C9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +110,81 @@
 				48C239802D6DC97D004B6C9C /* AgifyAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		48C239942D6DC987004B6C9C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				48C239932D6DC987004B6C9C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		48C239982D6DC987004B6C9C /* AgifyApp */ = {
+			isa = PBXGroup;
+			children = (
+				48C239952D6DC987004B6C9C /* AgifyAppApp.swift */,
+				48C239B52D6DD66A004B6C9C /* View */,
+				48C239B82D6DD675004B6C9C /* ViewModel */,
+				48C239B42D6DD65D004B6C9C /* Model */,
+				48C239AE2D6DD1D7004B6C9C /* Network */,
+				48C239942D6DC987004B6C9C /* Preview Content */,
+				48C239962D6DC987004B6C9C /* Assets.xcassets */,
+				48C239B92D6DDA62004B6C9C /* DataSource.swift */,
+			);
+			path = AgifyApp;
+			sourceTree = "<group>";
+		};
+		48C2399E2D6DC98A004B6C9C /* AgifyAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				48C2399D2D6DC98A004B6C9C /* AgifyAppTests.swift */,
+			);
+			path = AgifyAppTests;
+			sourceTree = "<group>";
+		};
+		48C239A22D6DC98D004B6C9C /* AgifyAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				48C239A02D6DC98D004B6C9C /* AgifyAppUITests.swift */,
+				48C239A12D6DC98D004B6C9C /* AgifyAppUITestsLaunchTests.swift */,
+			);
+			path = AgifyAppUITests;
+			sourceTree = "<group>";
+		};
+		48C239AE2D6DD1D7004B6C9C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				48C239A52D6DD0DF004B6C9C /* Networkable.swift */,
+				48C239AC2D6DD1A7004B6C9C /* ApiError.swift */,
+				48C239AF2D6DD1E8004B6C9C /* ApiService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		48C239B42D6DD65D004B6C9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48C239BF2D6DF40B004B6C9C /* Nationality.swift */,
+				48C239B22D6DD659004B6C9C /* Age.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48C239B52D6DD66A004B6C9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48C239972D6DC987004B6C9C /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48C239B82D6DD675004B6C9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48C239B62D6DD671004B6C9C /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +201,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				48C239682D6DC97C004B6C9C /* AgifyApp */,
 			);
 			name = AgifyApp;
 			packageProductDependencies = (
@@ -130,9 +222,6 @@
 			dependencies = (
 				48C239782D6DC97D004B6C9C /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				48C239792D6DC97D004B6C9C /* AgifyAppTests */,
-			);
 			name = AgifyAppTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +241,6 @@
 			);
 			dependencies = (
 				48C239822D6DC97D004B6C9C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				48C239832D6DC97D004B6C9C /* AgifyAppUITests */,
 			);
 			name = AgifyAppUITests;
 			packageProductDependencies = (
@@ -212,6 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C239992D6DC987004B6C9C /* Preview Assets.xcassets in Resources */,
+				48C2399A2D6DC987004B6C9C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C2399B2D6DC987004B6C9C /* AgifyAppApp.swift in Sources */,
+				48C239B02D6DD1E8004B6C9C /* ApiService.swift in Sources */,
+				48C239AD2D6DD1A7004B6C9C /* ApiError.swift in Sources */,
+				48C239B32D6DD659004B6C9C /* Age.swift in Sources */,
+				48C2399C2D6DC987004B6C9C /* ContentView.swift in Sources */,
+				48C239A62D6DD0DF004B6C9C /* Networkable.swift in Sources */,
+				48C239C12D6DF40B004B6C9C /* Nationality.swift in Sources */,
+				48C239BA2D6DDA62004B6C9C /* DataSource.swift in Sources */,
+				48C239B72D6DD671004B6C9C /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +340,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C239BE2D6DE8F2004B6C9C /* DataSource.swift in Sources */,
+				48C239A72D6DD0DF004B6C9C /* Networkable.swift in Sources */,
+				48C2399F2D6DC98A004B6C9C /* AgifyAppTests.swift in Sources */,
+				48C239BB2D6DE899004B6C9C /* ViewModel.swift in Sources */,
+				48C239BD2D6DE8E6004B6C9C /* Age.swift in Sources */,
+				48C239C02D6DF40B004B6C9C /* Nationality.swift in Sources */,
+				48C239BC2D6DE8A1004B6C9C /* ApiError.swift in Sources */,
+				48C239B12D6DD1E8004B6C9C /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C239A32D6DC98D004B6C9C /* AgifyAppUITests.swift in Sources */,
+				48C239A42D6DC98D004B6C9C /* AgifyAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

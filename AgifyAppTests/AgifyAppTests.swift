@@ -10,8 +10,20 @@ import Testing
 
 struct AgifyAppTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func ageSuccess() async throws {
+        let mockService = MockApiService()
+        let viewModel = ViewModel(apiService: mockService)
+        
+        await viewModel.getAge(from: "john", countryCode: nil)
+        
+        #expect(viewModel.age == 44)
     }
 
+    @Test func ageFailure() async throws {
+        let mockService = MockApiService()
+        let viewModel = ViewModel(apiService: mockService)
+        await viewModel.getAge(from: "john", countryCode: nil)
+
+        #expect(viewModel.age != 41)
+    }
 }
