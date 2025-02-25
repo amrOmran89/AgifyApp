@@ -26,14 +26,13 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
                 .padding(.vertical)
             
-            AgeResultView(age: viewModel.age, name: text, nationality: viewModel.nationality)
+            ResultView(
+                error: viewModel.apiError,
+                age: viewModel.age,
+                name: text,
+                nationality: viewModel.nationality
+            )
             
-            Image("image")
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 40, style: .continuous))
-                .padding()
-
             Spacer()
             
             SearchField(

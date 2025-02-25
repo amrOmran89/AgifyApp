@@ -11,6 +11,7 @@ class ViewModel: ObservableObject {
     
     @Published var age: Age?
     @Published var nationality: String?
+    @Published var apiError: ApiError?
     
     private let apiService: ApiServicable
     private let dataSource = DataSource()
@@ -37,7 +38,17 @@ class ViewModel: ObservableObject {
                 age = result
             }
         } catch {
-            print(error)
+            if let error = error as? ApiError {
+                await MainActor.run {
+                    apiError = error
+                }
+            }
+            
+            if error is DecodingError {
+                await MainActor.run {
+                    apiError = .decodingError
+                }
+            }
         }
     }
     

@@ -28,7 +28,11 @@ struct SearchField: View {
 
                     }
                 } label: {
-                    Text(selectedCountry.flag)
+                    HStack(spacing: 2) {
+                        Text(selectedCountry.flag)
+                        Image(systemName: "chevron.down")
+                            .foregroundStyle(.gray)
+                    }
                 }
 
                 TextField("Your name...", text: $text)
@@ -38,12 +42,11 @@ struct SearchField: View {
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .overlay {
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.black)
+                    .stroke(Color.black, lineWidth: 0.5)
             }
          
             Button {
                 action()
-//                viewModel.getAgeAndNationality(from: text, countryCode: selectedCountry.code)
             } label: {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 22))
