@@ -8,86 +8,94 @@
 import SwiftUI
 
 struct ResultView: View {
-    
-    @State private var image = "image"
-    
+        
     let error: ApiError?
     let age: Age?
-    let name: String
     let nationality: String?
+    let gender: GenderType
     
     var body: some View {
         VStack {
+            Image(imageText)
+                .resizable()
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 40, style: .continuous))
+                .frame(width: 300)
+            
             VStack {
                 if let error {
-                    Group {
+                    VStack {
                         switch error {
                         case .responseNotFound, .badURL:
-                            Text("Ops something wrong happend")
-                                .font(.system(size: 40, weight: .black, design: .rounded))
-                        case .statusCode(let code):
-                            VStack {
-                                Text(code, format: .number)
-                                    .font(.system(size: 60, weight: .black, design: .rounded))
-                                    .foregroundStyle(.red)
-                                
-                                Text("Too many requests")
-                                    .font(.system(size: 24, weight: .light, design: .rounded))
-                            }
+                            Text("Ops something wrong happend\nTry again later")
+                                .font(.system(size: 20, weight: .light, design: .rounded))
+                                .multilineTextAlignment(.center)
+                        case .statusCode(_):
+                            Text("Sorry!\nToo many requests\nTry again later")
+                                .font(.system(size: 20, weight: .light, design: .rounded))
+                                .multilineTextAlignment(.center)
                         case .decodingError:
-                            Text("Enter a valid name")
-                                .font(.system(size: 40, weight: .black, design: .rounded))
+                            Text("Sorry!\nYou entered an invalid name\nTry again")
+                                .font(.system(size: 20, weight: .light, design: .rounded))
+                                .multilineTextAlignment(.center)
                         }
                     }
                     .padding(.bottom)
                 } else {
-                    Group {
+                    VStack {
                         if let age {
-                            
                             HStack {
-                                Text("\(name) is")
-                                    .font(.system(size: 24, weight: .light, design: .rounded))
+                                Text("\(age.name) is")
+                                    .font(.system(size: 20, weight: .light, design: .rounded))
 
                                 Text(age.age, format: .number)
                                     .font(.system(size: 28, weight: .bold, design: .rounded))
                                     .italic()
                                 
                                 Text("years old")
-                                    .font(.system(size: 24, weight: .light, design: .rounded))
+                                    .font(.system(size: 20, weight: .light, design: .rounded))
                             }
+                        } else {
+                            Text("Find your age from your name")
+                                .font(.system(size: 20, weight: .light, design: .rounded))
+                                .multilineTextAlignment(.center)
+                                .padding(.top)
                         }
                         
                         if let nationality {
                             Text(nationality)
                                 .font(.system(size: 18, weight: .light, design: .rounded))
                         }
+                        
                     }
                     .padding(.bottom)
                 }
             }
-            .frame(height: 100)
-            
-            Image(image)
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 40, style: .continuous))
-                .padding()
-                .animation(.smooth, value: image)
-        }
-        .onChange(of: error) { oldValue, newValue in
-            if newValue != nil {
-                generateRandomError()
-            } else {
-                image = "image"
-            }
+            .animation(.easeInOut)
         }
     }
     
-    func generateRandomError() {
-        image = "error_\(Int.random(in: 1...4))"
+    private var imageText: String {
+        if error != nil {
+            "error_image"
+        } else {
+            switch gender {
+            case .male:
+                "men_age_group"
+            case .female:
+                "women_age_group"
+            case .default:
+                "default_age_group"
+            }
+        }
     }
 }
 
 #Preview {
-    ResultView(error: .statusCode(429), age: .init(count: 1, name: "John", age: 40), name: "John", nationality: "German")
+    ResultView(
+        error: .badURL,
+        age: .init(count: 1, name: "John", age: 40),
+        nationality: "German",
+        gender: .male
+    )
 }

@@ -10,6 +10,7 @@ import Foundation
 protocol ApiServicable {
     func getAge(from name: String, countryCode: String?) async throws -> Age
     func getNationality(from name: String) async throws -> Nationality
+    func getGender(from name: String) async throws -> Gender
 }
 
 final class ApiService: Networkable, ApiServicable {
@@ -35,15 +36,14 @@ final class ApiService: Networkable, ApiServicable {
         let result: Nationality = try await fetch(url: urlComponents?.url)
         return result
     }
-}
+    
+    func getGender(from name: String) async throws -> Gender {
+        let baseUrl = "https://api.genderize.io"
+        var urlComponents = URLComponents(string: baseUrl)
+        urlComponents?.queryItems = [.init(name: "name", value: name)]
 
-class MockApiService: ApiServicable {
-    
-    func getAge(from name: String, countryCode: String?) async throws -> Age {
-        Age(count: 1, name: "John", age: 44)
+        let result: Gender = try await fetch(url: urlComponents?.url)
+        return result
     }
-    
-    func getNationality(from name: String) async throws -> Nationality {
-        Nationality(count: 1, name: "Marc", country: [])
-    }
+
 }

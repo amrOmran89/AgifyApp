@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @State private var text = ""
     @State private var selectedCountry = Localization(name: "All", code: nil, flag: "🌍")
-   
+
     @StateObject private var viewModel: ViewModel
     
     init() {
@@ -21,17 +21,18 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            Text("Your estimated Age based on your first Name is")
-                .font(.system(size: 26, weight: .semibold, design: .rounded))
+            Text("Estimate the Age, Nationality of a Name")
+                .font(.system(size: 28, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
                 .padding(.vertical)
             
             ResultView(
                 error: viewModel.apiError,
                 age: viewModel.age,
-                name: text,
-                nationality: viewModel.nationality
+                nationality: viewModel.nationality,
+                gender: viewModel.gender
             )
+            .animation(.smooth, value: viewModel.gender)
             
             Spacer()
             
@@ -41,17 +42,11 @@ struct ContentView: View {
                 countries: viewModel.countries
             ) {
                 viewModel.getAgeAndNationality(from: text, countryCode: selectedCountry.code)
+                text = ""
             }
             .padding(.bottom, 20)
-            
         }
         .padding()
-        .onChange(of: text) { oldValue, newValue in
-            if !oldValue.isEmpty && oldValue != newValue {
-                viewModel.age = nil
-                viewModel.nationality = nil
-            }
-        }
     }
 }
 

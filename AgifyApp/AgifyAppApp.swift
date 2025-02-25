@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct AgifyAppApp: App {
+
+    @AppStorage("firstTimeOpen") var firstTimeOpen = true
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if firstTimeOpen {
+                OnboardingView()
+            } else {
+                ContentView()
+            }
         }
     }
 }

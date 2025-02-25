@@ -11,6 +11,7 @@ class ViewModel: ObservableObject {
     
     @Published var age: Age?
     @Published var nationality: String?
+    @Published var gender = GenderType.default
     @Published var apiError: ApiError?
     
     private let apiService: ApiServicable
@@ -28,6 +29,7 @@ class ViewModel: ObservableObject {
         Task {
             await getAge(from: name, countryCode: countryCode)
             await getNationality(from: name)
+            await getGender(from: name)
         }
     }
     
@@ -35,6 +37,7 @@ class ViewModel: ObservableObject {
         do {
             let result = try await apiService.getAge(from: name, countryCode: countryCode)
             await MainActor.run {
+                apiError = nil
                 age = result
             }
         } catch {
@@ -59,9 +62,9 @@ class ViewModel: ObservableObject {
                 return
             }
             
-            if let countryName = countryName(from: mostProbabilityCountry.countryId) {
+            if let countryName = mostProbabilityCountry.countryId.countryNameFromCode {
                 await MainActor.run {
-                    nationality = "\(name) is from \(countryName) with \(formatAsPercentage(mostProbabilityCountry.probability)) certainty"
+                    nationality = "\(name) is from \(countryName) with \(mostProbabilityCountry.probability.formatAsPercentage) certainty"
                 }
             }
             
@@ -70,16 +73,21 @@ class ViewModel: ObservableObject {
         }
     }
     
-    private func countryName(from countryCode: String) -> String? {
-        Locale.current.localizedString(forRegionCode: countryCode)
+    func getGender(from name: String) async {
+        do {
+            let result = try await apiService.getGender(from: name)
+            await MainActor.run {
+                gender = result.gender
+            }
+        } catch {
+            print(error)
+        }
     }
     
-    private func formatAsPercentage(_ value: Float) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
-        
-        return formatter.string(from: NSNumber(value: value)) ?? "\(value * 100)%"
+    func resetUI() {
+        age = nil
+        nationality = nil
+        apiError = nil
+        gender = .default
     }
 }
