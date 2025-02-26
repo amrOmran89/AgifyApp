@@ -23,14 +23,36 @@ final class AgifyAppUITests: XCTestCase {
     }
 
     @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testSearchButton() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let textField = app.textFields["text_field"]
+        XCTAssertTrue(textField.exists, "TextField should be visible")
+        
+        let searchButton = app.buttons["search_button"]
+        XCTAssertTrue(searchButton.exists, "Search Button should be visible")
+        XCTAssertFalse(searchButton.isEnabled, "Search Button should not be enabled if the TextField is empty")
+        
+        
+        textField.tap()
+        textField.typeText("J")
+        textField.typeText("o")
+        textField.typeText("h")
+        textField.typeText("n")
+        
+        XCTAssertTrue(searchButton.isEnabled, "Search Button should be enabled")
+        
+        textField.tap()
+        textField.typeText("")
+        
+        let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: 4)
+        textField.typeText(deleteString)
+        
+        XCTAssertFalse(searchButton.isEnabled, "Search Button should be again not enabled")
     }
-
+    
+    
     @MainActor
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

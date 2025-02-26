@@ -21,7 +21,7 @@ class ViewModel: ObservableObject {
         self.apiService = apiService
     }
     
-    var countries: [Localization] {
+    var countries: [CountryCodeFlag] {
         dataSource.countries.sorted(by: { $0.name > $1.name })
     }
     

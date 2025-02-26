@@ -10,15 +10,16 @@ import SwiftUI
 @main
 struct AgifyAppApp: App {
 
-    @AppStorage("firstTimeOpen") var firstTimeOpen = true
+    // this @State could be replaced with @AppStorge, but kept it for testing
+    @State var showOnboarding = true
 
     var body: some Scene {
         WindowGroup {
-            if firstTimeOpen {
-                OnboardingView()
-            } else {
-                ContentView()
-            }
+            ContentView()
+                .sheet(isPresented: $showOnboarding) {
+                    OnboardingView(showOnboarding: $showOnboarding)
+                        .interactiveDismissDisabled()
+                }
         }
     }
 }

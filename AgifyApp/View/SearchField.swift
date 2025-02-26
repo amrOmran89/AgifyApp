@@ -10,8 +10,8 @@ import SwiftUI
 struct SearchField: View {
     
     @Binding var text: String
-    @Binding var selectedCountry: Localization
-    let countries: [Localization]
+    @Binding var selectedCountry: CountryCodeFlag
+    let countries: [CountryCodeFlag]
     let action: () -> Void
     
     var body: some View {
@@ -37,12 +37,14 @@ struct SearchField: View {
 
                 TextField("Your name...", text: $text)
                     .autocorrectionDisabled()
+                    .accessibilityIdentifier("text_field")
+
             }
             .padding()
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .overlay {
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.black, lineWidth: 0.5)
+                    .stroke(Color.primary, lineWidth: 0.5)
             }
          
             Button {
@@ -51,11 +53,12 @@ struct SearchField: View {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 22))
                     .padding()
-                    .foregroundStyle(.white)
-                    .background(text.isEmpty ? Color.black.opacity(0.3) : Color.black)
+                    .foregroundStyle(Color("ButtonLabelColor"))
+                    .background(text.isEmpty ? Color.primary.opacity(0.3) : Color.primary)
                     .clipShape(RoundedRectangle(cornerRadius: 16))
             }
             .disabled(text.isEmpty)
+            .accessibilityIdentifier("search_button")
         }
     }
 }
@@ -63,7 +66,7 @@ struct SearchField: View {
 #Preview {
     SearchField(
         text: .constant(""),
-        selectedCountry: .constant(Localization(name: "Germany", code: "DE", flag: "🇩🇪")),
+        selectedCountry: .constant(CountryCodeFlag(name: "Germany", code: "DE", flag: "🇩🇪")),
         countries: DataSource().countries
     ) { }
 }

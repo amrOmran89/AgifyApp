@@ -13,6 +13,8 @@
 		485C66E52D6E664F00804894 /* String+Agify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C66E32D6E664F00804894 /* String+Agify.swift */; };
 		485C66E82D6E669A00804894 /* Float+Agify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C66E72D6E669A00804894 /* Float+Agify.swift */; };
 		485C66E92D6E669A00804894 /* Float+Agify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C66E72D6E669A00804894 /* Float+Agify.swift */; };
+		485C66EB2D6F0C0100804894 /* CountryCodeFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C66EA2D6F0C0100804894 /* CountryCodeFlag.swift */; };
+		485C66EC2D6F0C0100804894 /* CountryCodeFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C66EA2D6F0C0100804894 /* CountryCodeFlag.swift */; };
 		4862E0802D6E035500E1F690 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4862E07F2D6E035500E1F690 /* SearchField.swift */; };
 		4862E0842D6E0CC600E1F690 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4862E0832D6E0CC600E1F690 /* ResultView.swift */; };
 		489770C82D6E3B760062EEF0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489770C72D6E3B760062EEF0 /* OnboardingView.swift */; };
@@ -62,6 +64,7 @@
 		485C66E02D6E645B00804894 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		485C66E32D6E664F00804894 /* String+Agify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Agify.swift"; sourceTree = "<group>"; };
 		485C66E72D6E669A00804894 /* Float+Agify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Agify.swift"; sourceTree = "<group>"; };
+		485C66EA2D6F0C0100804894 /* CountryCodeFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeFlag.swift; sourceTree = "<group>"; };
 		4862E07F2D6E035500E1F690 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		4862E0832D6E0CC600E1F690 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		489770C72D6E3B760062EEF0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 		48C239B42D6DD65D004B6C9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				485C66EA2D6F0C0100804894 /* CountryCodeFlag.swift */,
 				48C239BF2D6DF40B004B6C9C /* Nationality.swift */,
 				48C239B22D6DD659004B6C9C /* Age.swift */,
 				489770CC2D6E58910062EEF0 /* Gender.swift */,
@@ -373,6 +377,7 @@
 				489770C82D6E3B760062EEF0 /* OnboardingView.swift in Sources */,
 				48C239BA2D6DDA62004B6C9C /* DataSource.swift in Sources */,
 				48C239B72D6DD671004B6C9C /* ViewModel.swift in Sources */,
+				485C66EB2D6F0C0100804894 /* CountryCodeFlag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +390,7 @@
 				48C239A72D6DD0DF004B6C9C /* Networkable.swift in Sources */,
 				48C2399F2D6DC98A004B6C9C /* AgifyAppTests.swift in Sources */,
 				48C239BB2D6DE899004B6C9C /* ViewModel.swift in Sources */,
+				485C66EC2D6F0C0100804894 /* CountryCodeFlag.swift in Sources */,
 				48C239BD2D6DE8E6004B6C9C /* Age.swift in Sources */,
 				48C239C02D6DF40B004B6C9C /* Nationality.swift in Sources */,
 				489770CE2D6E58910062EEF0 /* Gender.swift in Sources */,
@@ -553,8 +559,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -582,8 +588,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

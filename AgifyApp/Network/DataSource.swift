@@ -9,7 +9,7 @@ import Foundation
 
 class DataSource {
     
-    let countries: [Localization] = [
+    let countries: [CountryCodeFlag] = [
         .init(name: "United States", code: "US", flag: "🇺🇸"),
         .init(name: "Italy", code: "IT", flag: "🇮🇹"),
         .init(name: "France", code: "FR", flag: "🇫🇷"),
@@ -23,12 +23,4 @@ class DataSource {
         .init(name: "Greece", code: "GR", flag: "🇬🇷"),
         .init(name: "Lebanon", code: "LB", flag: "🇱🇧"),
     ]
-}
-
-struct Localization: Identifiable {
-    let name: String
-    let code: String?
-    let flag: String
-    
-    var id = UUID()
 }

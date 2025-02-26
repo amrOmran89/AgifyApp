@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var text = ""
-    @State private var selectedCountry = Localization(name: "All", code: nil, flag: "🌍")
+    @State private var selectedCountry = CountryCodeFlag(name: "All", code: nil, flag: "🌍")
 
     @StateObject private var viewModel: ViewModel
     
