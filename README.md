@@ -5,6 +5,10 @@ This is an iOS app that uses the **Agify API** to estimate the age of a person b
 ## Features
 
 - **Core functionality**: Input a first name and display the estimated age based on the Agify API.
+- **Technology**:
+   - Swift
+   - SwiftUI
+   - Swift Concurrency
 
 ## Requirements
 
