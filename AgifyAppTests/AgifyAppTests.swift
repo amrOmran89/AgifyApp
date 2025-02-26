@@ -33,7 +33,7 @@ struct AgifyAppTests {
     @Test func nationalityFailure() async throws {
         let viewModel = ViewModel(apiService: mockService)
         await viewModel.getNationality(from: "marc")
-        #expect(viewModel.nationality != "marc is from United Kingdom with 20 % certainty")
+        #expect(viewModel.nationality != "marc is not from United Kingdom with 20 % certainty")
     }
     
     @Test func resetUI() {

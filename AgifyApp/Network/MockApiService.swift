@@ -25,6 +25,6 @@ class MockApiService: ApiServicable {
     }
     
     func getGender(from name: String) async throws -> Gender {
-        fatalError()
+        Gender(count: 1, name: "Jack", gender: .male, probability: 0.9)
     }
 }
