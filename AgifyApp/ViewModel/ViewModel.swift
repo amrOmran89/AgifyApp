@@ -56,31 +56,24 @@ class ViewModel: ObservableObject {
     }
     
     func getNationality(from name: String) async {
-        do {
-            let result = try await apiService.getNationality(from: name)
-            guard let mostProbabilityCountry = result.country.sorted(by: { $0.probability > $1.probability }).first else {
-                return
+        let result = try? await apiService.getNationality(from: name)
+        guard let mostProbabilityCountry = result!.country.sorted(by: { $0.probability > $1.probability }).first else {
+            return
+        }
+        
+        if let countryName = mostProbabilityCountry.countryId.countryNameFromCode {
+            await MainActor.run {
+                nationality = "\(name) is from \(countryName) with \(mostProbabilityCountry.probability.formatAsPercentage) certainty"
             }
-            
-            if let countryName = mostProbabilityCountry.countryId.countryNameFromCode {
-                await MainActor.run {
-                    nationality = "\(name) is from \(countryName) with \(mostProbabilityCountry.probability.formatAsPercentage) certainty"
-                }
-            }
-            
-        } catch {
-            print(error)
         }
     }
     
     func getGender(from name: String) async {
-        do {
-            let result = try await apiService.getGender(from: name)
+        let result = try? await apiService.getGender(from: name)
+        if let genderResult = result?.gender {
             await MainActor.run {
-                gender = result.gender
+                gender = genderResult
             }
-        } catch {
-            print(error)
         }
     }
     
