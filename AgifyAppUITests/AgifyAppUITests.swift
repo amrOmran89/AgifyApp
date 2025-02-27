@@ -27,7 +27,10 @@ final class AgifyAppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let textField = app.textFields["text_field"]
+        let button = app.buttons["Find your age"]
+        button.tap()
+        
+        let textField = app.textFields["Your name..."]
         XCTAssertTrue(textField.exists, "TextField should be visible")
         
         let searchButton = app.buttons["search_button"]
