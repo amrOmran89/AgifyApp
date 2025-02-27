@@ -17,5 +17,4 @@ struct Gender: Codable {
 enum GenderType: String, Codable {
     case male
     case female
-    case `default`
 }

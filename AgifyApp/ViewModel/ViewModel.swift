@@ -11,7 +11,7 @@ class ViewModel: ObservableObject {
     
     @Published var age: Age?
     @Published var nationality: String?
-    @Published var gender = GenderType.default
+    @Published var gender: GenderType?
     @Published var apiError: ApiError?
     
     private let apiService: ApiServicable

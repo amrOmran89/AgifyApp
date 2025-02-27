@@ -12,7 +12,7 @@ struct ResultView: View {
     let error: ApiError?
     let age: Age?
     let nationality: String?
-    let gender: GenderType
+    let gender: GenderType?
     
     var body: some View {
         VStack {
@@ -71,7 +71,7 @@ struct ResultView: View {
                     .padding(.bottom)
                 }
             }
-            .animation(.easeInOut)
+            .animation(.easeInOut, value: imageText)
         }
     }
     
@@ -84,7 +84,7 @@ struct ResultView: View {
                 "men_age_group"
             case .female:
                 "women_age_group"
-            case .default:
+            case .none:
                 "default_age_group"
             }
         }
