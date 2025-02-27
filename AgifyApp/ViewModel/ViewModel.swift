@@ -76,11 +76,4 @@ class ViewModel: ObservableObject {
             }
         }
     }
-    
-    func resetUI() {
-        age = nil
-        nationality = nil
-        apiError = nil
-        gender = .default
-    }
 }

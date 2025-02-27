@@ -35,20 +35,4 @@ struct AgifyAppTests {
         await viewModel.getNationality(from: "marc")
         #expect(viewModel.nationality != "marc is not from United Kingdom with 20 % certainty")
     }
-    
-    @Test func resetUI() {
-        let viewModel = ViewModel(apiService: mockService)
-        
-        viewModel.age = Age(count: 100, name: "Mathew", age: 39)
-        viewModel.nationality = "John is from USA"
-        viewModel.gender = .male
-        viewModel.apiError = nil
-        
-        viewModel.resetUI()
-        
-        #expect(viewModel.age == nil)
-        #expect(viewModel.nationality == nil)
-        #expect(viewModel.gender == .default)
-        #expect(viewModel.apiError == nil)
-    }
 }
